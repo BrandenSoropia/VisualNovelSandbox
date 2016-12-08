@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 32: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    if visited_city === True:
+    ^
+
+Ren'Py Version: Ren'Py 6.99.11.1749
