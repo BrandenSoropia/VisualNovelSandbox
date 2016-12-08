@@ -1,20 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-IOError: [Errno 13] Permission denied: 'files.txt'
+  File "game/script.rpy", line 185, in script
+    e "Who wrote all these?"
+  File "game/script.rpy", line 79, in repulsor_event
+    if (not startedSearch):
+UnboundLocalError: local variable 'startedSearch' referenced before assignment
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_developer/developer.rpym", line 492, in script
-    python hide:
-  File "/Applications/renpy-6.99.11-sdk/renpy/ast.py", line 805, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Applications/renpy-6.99.11-sdk/renpy/python.py", line 1641, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/_developer/developer.rpym", line 494, in <module>
-    f = file("files.txt", "w")
-IOError: [Errno 13] Permission denied: 'files.txt'
+  File "game/script.rpy", line 185, in script
+    e "Who wrote all these?"
+  File "/Applications/renpy-6.99.11-sdk/renpy/ast.py", line 603, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "/Applications/renpy-6.99.11-sdk/renpy/exports.py", line 1135, in say
+    who(what, interact=interact)
+  File "/Applications/renpy-6.99.11-sdk/renpy/character.py", line 873, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "/Applications/renpy-6.99.11-sdk/renpy/character.py", line 719, in do_display
+    **display_args)
+  File "/Applications/renpy-6.99.11-sdk/renpy/character.py", line 510, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Applications/renpy-6.99.11-sdk/renpy/ui.py", line 278, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/core.py", line 2496, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/core.py", line 3172, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/layout.py", line 928, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/layout.py", line 928, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/layout.py", line 928, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/transform.py", line 842, in event
+    rv = d.event(ev, cx, cy, st)
+  File "/Applications/renpy-6.99.11-sdk/renpy/display/particle.py", line 311, in event
+    return self.event_function(ev, x, y, st)
+  File "game/script.rpy", line 79, in repulsor_event
+    if (not startedSearch):
+UnboundLocalError: local variable 'startedSearch' referenced before assignment
 
 Darwin-15.6.0-x86_64-i386-64bit
 Ren'Py 6.99.11.1749
